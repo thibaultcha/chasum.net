@@ -9,7 +9,7 @@ var jekyll_config = './_config.yml'
 var sources = {
   content: 'site/**/*.{markdown,md,html,txt}',
   styles: 'site/_assets/stylesheets/**/*.{less,css}',
-  js: 'site/_assets/javascripts/**/*.js',
+  js: 'site/_assets/scripts/**/*.js',
   images: 'site/_assets/images/**/*'
 }
 
@@ -41,8 +41,8 @@ gulp.task('javascripts', function () {
     .pipe($.sourcemaps.init())
     .pipe($.concat('site.js'))
     .pipe($.uglify())
-    .pipe($.sourcemaps.write('dist/assets/maps'))
-    .pipe(gulp.dest('dist/assets'))
+    .pipe($.sourcemaps.write('maps'))
+    .pipe(gulp.dest('dist/assets/scripts'))
     .pipe($.size())
     .pipe($.connect.reload())
 })
@@ -84,8 +84,8 @@ gulp.task('html', ['jekyll'], function () {
     .pipe($.connect.reload())
 })
 
-gulp.task('build', ['javascripts', 'images'], function () {
-  sequence('html', 'styles')
+gulp.task('build', function () {
+  sequence('html', 'styles', 'javascripts', 'images')
 })
 
 gulp.task('gh-pages', function (next) {

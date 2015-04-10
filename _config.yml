@@ -1,5 +1,5 @@
 # Site settings
-title: Thibault Charbonnier
+title: thibaultcha
 email: thibaultcha@me.com
 description: > # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
@@ -14,3 +14,4 @@ url: "http://1991.io"
 source: ./site
 destination: ./dist
 markdown: kramdown
+permalink: pretty
