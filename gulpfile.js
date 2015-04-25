@@ -7,10 +7,11 @@ var sequence = require('run-sequence')
 
 var jekyll_config = './_config.yml'
 var sources = {
-  content: 'site/**/*.{markdown,md,html,txt}',
+  content: 'site/**/*.{markdown,md,html,txt,yml}',
   styles: 'site/_assets/stylesheets/**/*.{less,css}',
   js: 'site/_assets/scripts/**/*.js',
-  images: 'site/_assets/images/**/*'
+  images: 'site/_assets/images/**/*',
+  fonts: 'site/_assets/fonts/**/*'
 }
 
 gulp.task('clean', function (cb) {
@@ -30,7 +31,7 @@ gulp.task('styles', function () {
     .pipe($.minifyCss())
     .pipe($.sourcemaps.write('dist/assets/maps'))
     .pipe($.rename('styles.css'))
-    .pipe(gulp.dest('dist/assets/'))
+    .pipe(gulp.dest('dist/assets/css'))
     .pipe($.size())
     .pipe($.connect.reload())
 })
@@ -51,6 +52,14 @@ gulp.task('images', function () {
   return gulp.src(sources.images)
     .pipe($.plumber())
     .pipe(gulp.dest('dist/assets/images'))
+    .pipe($.size())
+    .pipe($.connect.reload())
+})
+
+gulp.task('fonts', function () {
+  return gulp.src(sources.fonts)
+    .pipe($.plumber())
+    .pipe(gulp.dest('dist/assets/font'))
     .pipe($.size())
     .pipe($.connect.reload())
 })
@@ -85,7 +94,7 @@ gulp.task('html', ['jekyll'], function () {
 })
 
 gulp.task('build', function () {
-  sequence('html', 'styles', 'javascripts', 'images')
+  sequence('html', 'styles', 'javascripts', 'images', 'fonts')
 })
 
 gulp.task('gh-pages', function (next) {
@@ -114,6 +123,7 @@ gulp.task('watch', function () {
   gulp.watch(sources.content, ['build'])
   gulp.watch(sources.styles, ['styles'])
   gulp.watch(sources.images, ['images'])
+  gulp.watch(sources.fonts, ['fonts'])
   gulp.watch(sources.js, ['javascripts'])
 })
 

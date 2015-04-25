@@ -1,13 +1,42 @@
 projects:
-  - TCBlobDownload
-  - TCBlobDownloadSwift
-  - TCCopyableLabel
-  - Equiprose
-  - Fortunecow
-  - lapis-syntax
-  - node-enumerate-properties
+  -
+    name: TCBlobDownload
+    link: https://github.com/thibaultCha/TCBlobDownload
+    description: Parallel large file download library for iOS.
+  -
+    name: TCBlobDownloadSwift
+    link: https://github.com/thibaultCha/TCBlobDownloadSwift
+    description: "A better TCBlobDownload for iOS 7+, in Swift."
+  -
+    name: TCCopyableLabel
+    link: https://github.com/thibaultCha/TCCopyableLabel
+    description: A copyable UILabel subclass.
+  -
+    name: Equiprose
+    link: https://github.com/thibaultCha/Equiprose
+    description: A static website and blog generator in Node.js.
+  -
+    name: Fortunecow
+    link: https://www.mashape.com/thibaultcha/fortunecow
+    description: A fun API combining cowsay and fortune cookies.
+  -
+    name: lapis-syntax
+    link: https://atom.io/themes/lapis-syntax
+    description: "A profound, purple based, dark colored theme for Atom."
+  -
+    name: node-enumerate-properties
+    link: https://github.com/thibaultCha/node-enumerate-properties
 
 contributions:
-  - Kong
-  - lua-resty-cassandra
-  - httpsnippet
+  -
+    name: Kong
+    link: http://getkong.org/
+    description: "Scalable open source API Layer."
+  -
+    name: lua-resty-cassandra
+    link: https://github.com/jbochi/lua-resty-cassandra
+    description: Pure Lua Cassandra client using CQL binary protocol.
+  -
+    name: httpsnippet
+    link: https://github.com/Mashape/httpsnippet
+    description: "HTTP Request snippet generator for many languages & libraries."
