@@ -14,4 +14,9 @@ body {
 a {
   color: @main-color;
   text-decoration: none;
+  transition: 0.2s ease;
+
+  &:hover {
+    color: lighten(@main-color, 20%);
+  }
 }

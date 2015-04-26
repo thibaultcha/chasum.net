@@ -31,7 +31,7 @@ contributions:
   -
     name: Kong
     link: http://getkong.org/
-    description: "Scalable open source API Layer."
+    description: "Open source, centralized management layer for APIs built on top of NGINX."
   -
     name: lua-resty-cassandra
     link: https://github.com/jbochi/lua-resty-cassandra

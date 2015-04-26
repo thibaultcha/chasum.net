@@ -1,13 +1,46 @@
 footer {
+
   hr {
-    margin-bottom: 5px;
+    margin-bottom: 0;
   }
 
-  ul.social {
-    float: right;
-    list-style: none;
-    li {
+  .footer-container {
+    padding: 15px 0;
+
+    nav {
       display: inline;
+    }
+
+    span {
+      font-size: 0.9em;
+    }
+
+    ul.social {
+      float: right;
+      list-style: none;
+      font-size: 1.3em;
+      line-height: 1.1;
+      margin-bottom: 0;
+
+      li {
+        display: inline;
+
+        & > i {
+          color: @main-color;
+        }
+      }
+    }
+
+    @media (max-width: 400px) {
+      text-align: center;
+
+      nav {
+        display: block;
+      }
+
+      ul.social {
+        float: none;
+      }
     }
   }
 }
