@@ -11,7 +11,8 @@ var sources = {
   styles: 'site/_assets/stylesheets/**/*.{less,css}',
   js: 'site/_assets/scripts/**/*.js',
   images: 'site/_assets/images/**/*',
-  fonts: 'site/_assets/fonts/**/*'
+  fonts: 'site/_assets/fonts/**/*',
+  files: 'site/_assets/files/**/*'
 }
 
 gulp.task('clean', function (cb) {
@@ -64,6 +65,14 @@ gulp.task('fonts', function () {
     .pipe($.connect.reload())
 })
 
+gulp.task('files', function () {
+  return gulp.src(sources.files)
+    .pipe($.plumber())
+    .pipe(gulp.dest('dist/assets/files'))
+    .pipe($.size())
+    .pipe($.connect.reload())
+})
+
 gulp.task('jekyll', function (next) {
   var cmd = 'bundle exec jekyll build --config ' + jekyll_config
 
@@ -94,7 +103,7 @@ gulp.task('html', ['jekyll'], function () {
 })
 
 gulp.task('build', function (cb) {
-  sequence('html', 'styles', 'javascripts', 'images', 'fonts', cb)
+  sequence('html', 'styles', 'javascripts', 'images', 'fonts', 'files', cb)
 })
 
 gulp.task('gh-pages', function (next) {
