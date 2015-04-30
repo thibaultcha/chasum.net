@@ -93,8 +93,8 @@ gulp.task('html', ['jekyll'], function () {
     .pipe($.connect.reload())
 })
 
-gulp.task('build', function () {
-  sequence('html', 'styles', 'javascripts', 'images', 'fonts')
+gulp.task('build', function (cb) {
+  sequence('html', 'styles', 'javascripts', 'images', 'fonts', cb)
 })
 
 gulp.task('gh-pages', function (next) {
@@ -106,8 +106,8 @@ gulp.task('gh-pages', function (next) {
   ghPages.publish(path.join(__dirname, 'dist'), config, next)
 })
 
-gulp.task('deploy', function () {
-  sequence('build', 'gh-pages')
+gulp.task('deploy', function (cb) {
+  sequence('build', 'gh-pages', cb)
 })
 
 gulp.task('connect', function () {
@@ -127,6 +127,6 @@ gulp.task('watch', function () {
   gulp.watch(sources.js, ['javascripts'])
 })
 
-gulp.task('default', ['clean'], function () {
-  sequence('build', 'watch', 'connect')
+gulp.task('default', ['clean'], function (cb) {
+  sequence('build', 'watch', 'connect', cb)
 })
