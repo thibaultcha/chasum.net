@@ -2,7 +2,7 @@ projects:
   -
     name: TCBlobDownload
     link: https://github.com/thibaultCha/TCBlobDownload
-    description: Parallel large file download library for iOS.
+    description: Concurrent large file download library for iOS.
   -
     name: TCBlobDownloadSwift
     link: https://github.com/thibaultCha/TCBlobDownloadSwift
