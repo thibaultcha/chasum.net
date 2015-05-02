@@ -24,13 +24,17 @@ projects:
     link: https://atom.io/themes/lapis-syntax
     description: "A profound, purple based, dark colored theme for Atom."
   -
+    name: node-enumerate-properties
+    link: https://github.com/thibaultCha/node-enumerate-properties
+    description: JavaScript objects manipulation via dot notation format.
+  -
     name: responsive-grid-layout
     link: https://github.com/thibaultCha/responsive-grid-layout
     description: Responsive grid layout generator in Less.
   -
-    name: node-enumerate-properties
-    link: https://github.com/thibaultCha/node-enumerate-properties
-    description: JavaScript objects manipulation via dot notation format.
+    name: TCQueuePlayer
+    link: https://github.com/thibaultCha/TCQueuePlayer
+    description: A wrapper class with controls for AVQueuePlayer.
 
 contributions:
   -
