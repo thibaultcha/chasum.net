@@ -49,6 +49,14 @@ gulp.task('javascripts', function () {
     .pipe($.connect.reload())
 })
 
+gulp.task('imagemin', function () {
+  var imagemin = require('gulp-imagemin')
+
+  return gulp.src(sources.images)
+    .pipe(imagemin({ progressive: true }))
+    .pipe(gulp.dest('site/_assets/images'))
+})
+
 gulp.task('images', function () {
   return gulp.src(sources.images)
     .pipe($.plumber())
