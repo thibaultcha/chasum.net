@@ -106,13 +106,13 @@ gulp.task('build', function (cb) {
   sequence('html', 'styles', 'javascripts', 'images', 'fonts', 'files', cb)
 })
 
-gulp.task('gh-pages', function (next) {
+gulp.task('gh-pages', function (cb) {
   var path = require('path')
   var config = {
     message: 'Deploy ' + new Date().toISOString()
   }
 
-  ghPages.publish(path.join(__dirname, 'dist'), config, next)
+  ghPages.publish(path.join(__dirname, 'dist'), config, cb)
 })
 
 gulp.task('deploy', function (cb) {
