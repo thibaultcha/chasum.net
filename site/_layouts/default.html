@@ -5,9 +5,9 @@
 
   <body>
 
-    {% comment %}
+    {% if page.no_header != true %}
     {% include header.html %}
-    {% endcomment %}
+    {% endif %}
 
     <div class="container">
       {{ content }}
@@ -15,7 +15,9 @@
 
     {% include footer.html %}
 
-    <script src="/assets/scripts/site.js" />
+    {% comment %}
+    <!--<script src="/assets/scripts/site.js" />-->
+    {% endcomment %}
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
