@@ -35,6 +35,10 @@ projects:
     name: TCQueuePlayer
     link: https://github.com/thibaultCha/TCQueuePlayer
     description: A wrapper class with controls for AVQueuePlayer.
+  -
+    name: lua-cassandra
+    link: https://github.com/thibaultCha/lua-cassandra
+    description: Cassandra driver for Lua using CQL binary protocol. Improved fork of lua-resty-cassandra.
 
 contributions:
   -
