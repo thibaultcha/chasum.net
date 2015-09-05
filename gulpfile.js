@@ -116,11 +116,17 @@ gulp.task('build', function (cb) {
 
 gulp.task('gh-pages', function (cb) {
   var path = require('path')
-  var config = {
-    message: 'Deploy ' + new Date().toISOString()
-  }
+  var cmd = 'git rev-parse --short HEAD'
 
-  ghPages.publish(path.join(__dirname, 'dist'), config, cb)
+  child_process.exec(cmd, function (err, stdout, stderr) {
+    if (err) {
+      cb(err)
+    }
+
+    ghPages.publish(path.join(__dirname, 'dist'), {
+      message: 'Deploying ' + stdout + '(' + new Date().toISOString() + ')'
+    }, cb)
+  })
 })
 
 gulp.task('deploy', function (cb) {
