@@ -118,7 +118,7 @@ gulp.task('gh-pages', function (cb) {
   var path = require('path')
   var cmd = 'git rev-parse --short HEAD'
 
-  child_process.exec(cmd, function (err, stdout, stderr) {
+  require('child_process').exec(cmd, function (err, stdout, stderr) {
     if (err) {
       cb(err)
     }
