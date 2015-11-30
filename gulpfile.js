@@ -1,12 +1,12 @@
 'use strict'
 
-var $ = require('gulp-load-plugins')()
-var gulp = require('gulp')
-var ghPages = require('gh-pages')
-var sequence = require('run-sequence')
+const $ = require('gulp-load-plugins')()
+const gulp = require('gulp')
+const ghPages = require('gh-pages')
+const sequence = require('run-sequence')
 
-var jekyll_config = './_config.yml'
-var sources = {
+const jekyll_config = './_config.yml'
+const sources = {
   content: 'site/**/*.{markdown,md,html,txt,yml}',
   styles: 'site/_assets/stylesheets/**/*.{less,css}',
   js: 'site/_assets/scripts/**/*.js',
@@ -15,13 +15,13 @@ var sources = {
   files: 'site/_assets/files/**/*'
 }
 
-gulp.task('clean', function (cb) {
+gulp.task('clean', cb => {
   ghPages.clean()
   require('del')(['dist', '.gh-pages'], cb)
 })
 
-gulp.task('styles', function () {
-  var glob = require('glob')
+gulp.task('styles', () => {
+  const glob = require('glob')
 
   return gulp.src('site/_assets/stylesheets/index.less')
     .pipe($.plumber())
@@ -37,7 +37,7 @@ gulp.task('styles', function () {
     .pipe($.connect.reload())
 })
 
-gulp.task('javascripts', function () {
+gulp.task('javascripts', () => {
   return gulp.src(sources.js)
     .pipe($.plumber())
     .pipe($.sourcemaps.init())
@@ -49,24 +49,21 @@ gulp.task('javascripts', function () {
     .pipe($.connect.reload())
 })
 
-gulp.task('imagemin', function () {
-  var imagemin = require('gulp-imagemin')
-
+gulp.task('imagemin', () => {
   return gulp.src(sources.images)
-    .pipe(imagemin({ progressive: true }))
+    .pipe($.imagemin({ progressive: true }))
     .pipe(gulp.dest('site/_assets/images'))
 })
 
-gulp.task('images', function () {
+gulp.task('images', () => {
   return gulp.src(sources.images)
     .pipe($.plumber())
-    .pipe($.imagemin())
     .pipe(gulp.dest('dist/assets/images'))
     .pipe($.size())
     .pipe($.connect.reload())
 })
 
-gulp.task('fonts', function () {
+gulp.task('fonts', () => {
   return gulp.src(sources.fonts)
     .pipe($.plumber())
     .pipe(gulp.dest('dist/assets/font'))
@@ -74,7 +71,7 @@ gulp.task('fonts', function () {
     .pipe($.connect.reload())
 })
 
-gulp.task('files', function () {
+gulp.task('files', () => {
   return gulp.src(sources.files)
     .pipe($.plumber())
     .pipe(gulp.dest('dist/assets/files'))
@@ -82,17 +79,17 @@ gulp.task('files', function () {
     .pipe($.connect.reload())
 })
 
-gulp.task('jekyll', function (next) {
-  var cmd = 'bundle exec jekyll build --config ' + jekyll_config
+gulp.task('jekyll', cb => {
+  const cmd = `bundle exec jekyll build --config ${jekyll_config}`
 
   require('child_process').exec(cmd, function (err, stdout, stderr) {
     console.log(stdout)
     console.error(stderr)
-    next(err)
+    cb(err)
   })
 })
 
-gulp.task('html', ['jekyll'], function () {
+gulp.task('html', ['jekyll'], () => {
   return gulp.src('dist/**/*.html')
     .pipe($.plumber())
     .pipe($.htmlmin({
@@ -111,15 +108,15 @@ gulp.task('html', ['jekyll'], function () {
     .pipe($.connect.reload())
 })
 
-gulp.task('build', function (cb) {
+gulp.task('build', cb => {
   sequence('html', 'styles', 'javascripts', 'images', 'fonts', 'files', cb)
 })
 
-gulp.task('gh-pages', function (cb) {
-  var path = require('path')
-  var cmd = 'git rev-parse --short HEAD'
+gulp.task('gh-pages', cb => {
+  const path = require('path')
+  const cmd = 'git rev-parse --short HEAD'
 
-  require('child_process').exec(cmd, function (err, stdout, stderr) {
+  require('child_process').exec(cmd, (err, stdout, stderr) => {
     if (err) {
       cb(err)
     }
@@ -130,11 +127,11 @@ gulp.task('gh-pages', function (cb) {
   })
 })
 
-gulp.task('deploy', function (cb) {
+gulp.task('deploy', cb => {
   sequence('build', 'gh-pages', cb)
 })
 
-gulp.task('connect', function () {
+gulp.task('connect', () => {
   $.connect.server({
     port: 9191,
     root: 'dist',
@@ -143,7 +140,7 @@ gulp.task('connect', function () {
   })
 })
 
-gulp.task('watch', function () {
+gulp.task('watch', () => {
   gulp.watch(sources.content, ['build'])
   gulp.watch(sources.styles, ['styles'])
   gulp.watch(sources.images, ['images'])
@@ -151,6 +148,6 @@ gulp.task('watch', function () {
   gulp.watch(sources.js, ['javascripts'])
 })
 
-gulp.task('default', ['clean'], function (cb) {
+gulp.task('default', ['clean'], cb => {
   sequence('build', 'watch', 'connect', cb)
 })
