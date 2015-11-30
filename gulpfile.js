@@ -4,6 +4,7 @@ const $ = require('gulp-load-plugins')()
 const gulp = require('gulp')
 const ghPages = require('gh-pages')
 const sequence = require('run-sequence')
+const browserSync = require('browser-sync').create()
 
 const jekyll_config = './_config.yml'
 const sources = {
@@ -34,7 +35,7 @@ gulp.task('styles', () => {
     .pipe($.rename('styles.css'))
     .pipe(gulp.dest('dist/assets/css'))
     .pipe($.size())
-    .pipe($.connect.reload())
+    .pipe(browserSync.stream())
 })
 
 gulp.task('javascripts', () => {
@@ -46,7 +47,7 @@ gulp.task('javascripts', () => {
     .pipe($.sourcemaps.write('maps'))
     .pipe(gulp.dest('dist/assets/scripts'))
     .pipe($.size())
-    .pipe($.connect.reload())
+    .pipe(browserSync.stream())
 })
 
 gulp.task('imagemin', () => {
@@ -60,7 +61,7 @@ gulp.task('images', () => {
     .pipe($.plumber())
     .pipe(gulp.dest('dist/assets/images'))
     .pipe($.size())
-    .pipe($.connect.reload())
+    .pipe(browserSync.stream())
 })
 
 gulp.task('fonts', () => {
@@ -68,7 +69,7 @@ gulp.task('fonts', () => {
     .pipe($.plumber())
     .pipe(gulp.dest('dist/assets/font'))
     .pipe($.size())
-    .pipe($.connect.reload())
+    .pipe(browserSync.stream())
 })
 
 gulp.task('files', () => {
@@ -76,7 +77,7 @@ gulp.task('files', () => {
     .pipe($.plumber())
     .pipe(gulp.dest('dist/assets/files'))
     .pipe($.size())
-    .pipe($.connect.reload())
+    .pipe(browserSync.stream())
 })
 
 gulp.task('jekyll', cb => {
@@ -105,11 +106,22 @@ gulp.task('html', ['jekyll'], () => {
     }))
     .pipe(gulp.dest('dist'))
     .pipe($.size())
-    .pipe($.connect.reload())
+    .pipe(browserSync.stream())
+})
+
+gulp.task('rev', () => {
+  var filter = $.filter('**/*.{js,css,jpg}', {restore: true})
+
+  return gulp.src('dist/**/*')
+    .pipe(filter)
+    .pipe($.rev())
+    .pipe(filter.restore)
+    .pipe($.revReplace())
+    .pipe(gulp.dest('dist'))
 })
 
 gulp.task('build', cb => {
-  sequence('html', 'styles', 'javascripts', 'images', 'fonts', 'files', cb)
+  sequence('html', 'styles', 'javascripts', 'images', 'fonts', 'files', 'rev', cb)
 })
 
 gulp.task('gh-pages', cb => {
@@ -122,7 +134,7 @@ gulp.task('gh-pages', cb => {
     }
 
     ghPages.publish(path.join(__dirname, 'dist'), {
-      message: 'Deploying ' + stdout + '(' + new Date().toISOString() + ')'
+      message: `Deploying ${stdout} (${new Date().toISOString()})`
     }, cb)
   })
 })
@@ -131,12 +143,14 @@ gulp.task('deploy', cb => {
   sequence('build', 'gh-pages', cb)
 })
 
-gulp.task('connect', () => {
-  $.connect.server({
+gulp.task('browser-sync', function () {
+  browserSync.init({
+    logPrefix: ' ▶ ',
     port: 9191,
-    root: 'dist',
-    livereload: true,
-    fallback: 'dist/404.html'
+    minify: false,
+    notify: false,
+    server: 'dist',
+    open: false
   })
 })
 
@@ -149,5 +163,5 @@ gulp.task('watch', () => {
 })
 
 gulp.task('default', ['clean'], cb => {
-  sequence('build', 'watch', 'connect', cb)
+  sequence('build', 'watch', 'browser-sync', cb)
 })
