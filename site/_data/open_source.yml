@@ -8,6 +8,10 @@ projects:
     link: https://github.com/thibaultCha/TCBlobDownloadSwift
     description: "A better TCBlobDownload for iOS 7+, in Swift."
   -
+    name: lua-cassandra
+    link: https://github.com/thibaultCha/lua-cassandra
+    description: "A feature-rich, pure Lua client library for Apache Cassandra (2.0+) usable in OpenResty."
+  -
     name: TCCopyableLabel
     link: https://github.com/thibaultCha/TCCopyableLabel
     description: A copyable UILabel subclass.
@@ -35,16 +39,12 @@ projects:
     name: TCQueuePlayer
     link: https://github.com/thibaultCha/TCQueuePlayer
     description: A wrapper class with controls for AVQueuePlayer.
-  -
-    name: lua-cassandra
-    link: https://github.com/thibaultCha/lua-cassandra
-    description: Cassandra driver for Lua using CQL binary protocol. Improved fork of lua-resty-cassandra.
 
 contributions:
   -
     name: Kong
-    link: http://getkong.org/
-    description: "Open source, centralized management layer for APIs built on top of NGINX."
+    link: https://getkong.org/
+    description: "Open-source, Microservice & API Management Layer built on top of NGINX."
   -
     name: lua-resty-cassandra
     link: https://github.com/jbochi/lua-resty-cassandra
