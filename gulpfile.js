@@ -60,6 +60,7 @@ gulp.task('imagemin', function () {
 gulp.task('images', function () {
   return gulp.src(sources.images)
     .pipe($.plumber())
+    .pipe($.imagemin())
     .pipe(gulp.dest('dist/assets/images'))
     .pipe($.size())
     .pipe($.connect.reload())
