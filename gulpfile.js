@@ -16,7 +16,7 @@ const sources = {
   files: 'site/_assets/files/**/*'
 }
 
-gulp.task('clean', cb => {
+gulp.task('clean', (cb) => {
   ghPages.clean()
   require('del')(['dist', '.gh-pages'], cb)
 })
@@ -26,12 +26,12 @@ gulp.task('styles', () => {
 
   return gulp.src('site/_assets/stylesheets/index.less')
     .pipe($.plumber())
-    //.pipe($.sourcemaps.init())
+    // .pipe($.sourcemaps.init())
     .pipe($.less())
     .pipe($.uncss({ html: glob.sync('dist/**/*.html') }))
     .pipe($.autoprefixer())
     .pipe($.minifyCss())
-    //.pipe($.sourcemaps.write('dist/assets/maps'))
+    // .pipe($.sourcemaps.write('dist/assets/maps'))
     .pipe($.rename('styles.css'))
     .pipe(gulp.dest('dist/assets/css'))
     .pipe($.size())
@@ -80,7 +80,7 @@ gulp.task('files', () => {
     .pipe(browserSync.stream())
 })
 
-gulp.task('jekyll', cb => {
+gulp.task('jekyll', (cb) => {
   const cmd = `bundle exec jekyll build --config ${jekyll_config}`
 
   require('child_process').exec(cmd, function (err, stdout, stderr) {
@@ -120,11 +120,11 @@ gulp.task('rev', () => {
     .pipe(gulp.dest('dist'))
 })
 
-gulp.task('build', cb => {
+gulp.task('build', (cb) => {
   sequence('html', 'styles', 'javascripts', 'images', 'fonts', 'files', 'rev', cb)
 })
 
-gulp.task('gh-pages', cb => {
+gulp.task('gh-pages', (cb) => {
   const path = require('path')
   const cmd = 'git rev-parse --short HEAD'
 
@@ -139,7 +139,7 @@ gulp.task('gh-pages', cb => {
   })
 })
 
-gulp.task('deploy', cb => {
+gulp.task('deploy', (cb) => {
   sequence('build', 'gh-pages', cb)
 })
 
@@ -162,6 +162,6 @@ gulp.task('watch', () => {
   gulp.watch(sources.js, ['javascripts'])
 })
 
-gulp.task('default', ['clean'], cb => {
+gulp.task('default', ['clean'], (cb) => {
   sequence('build', 'watch', 'browser-sync', cb)
 })
