@@ -10,7 +10,11 @@ projects:
   -
     name: lua-cassandra
     link: https://github.com/thibaultCha/lua-cassandra
-    description: "A feature-rich, pure Lua client library for Apache Cassandra (2.0+) usable in OpenResty."
+    description: "Pure Lua, feature-rich client for Apache Cassandra, fit for use in OpenResty."
+  -
+    name: lua-argon2
+    link: https://github.com/thibaultCha/lua-argon2
+    description: "Pure Lua binding for the Argon2 password hashing algorithm."
   -
     name: TCCopyableLabel
     link: https://github.com/thibaultCha/TCCopyableLabel
