@@ -18,7 +18,7 @@ const sources = {
 
 gulp.task('clean', (cb) => {
   ghPages.clean()
-  require('del')(['dist', '.gh-pages'], cb)
+  return require('del')(['dist', '.gh-pages'])
 })
 
 gulp.task('styles', () => {
@@ -120,7 +120,7 @@ gulp.task('rev', () => {
     .pipe(gulp.dest('dist'))
 })
 
-gulp.task('build', (cb) => {
+gulp.task('build', ['clean'], (cb) => {
   sequence('html', 'styles', 'javascripts', 'images', 'fonts', 'files', 'rev', cb)
 })
 
@@ -162,6 +162,6 @@ gulp.task('watch', () => {
   gulp.watch(sources.js, ['javascripts'])
 })
 
-gulp.task('default', ['clean'], (cb) => {
+gulp.task('default', (cb) => {
   sequence('build', 'watch', 'browser-sync', cb)
 })
