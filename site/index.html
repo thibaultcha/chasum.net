@@ -27,6 +27,7 @@ no_header: true
     </article>
     <article class="open-source">
       <h5>Contributions</h5>
+      <p>As an avid open-source lover, I try to contribute as much as I can to projects and ecosystems I love. Most frequently:</p>
       <ul>
         {% for project in site.data.open_source.contributions %}
           <li>{% if project.link %}<a href="{{ project.link }}">{{ project.name }}</a>{% else %}{{ project.name }}{% endif %}{% if project.description %}<span class="description">: {{ project.description }}</span>{% endif %}</li>

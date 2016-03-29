@@ -1,4 +1,4 @@
-article.me {
+.me {
   padding: 8rem 0;
   text-align: center;
 
@@ -13,6 +13,13 @@ article.me {
 }
 
 .open-source {
+  p {
+    font-size: 110%;
+    @media (min-width: 120px) {
+      width: 80%;
+    }
+  }
+
   ul {
     list-style: none;
 
@@ -23,9 +30,5 @@ article.me {
         font-weight: bold;
       }
     }
-  }
-
-  article {
-    margin: 0 auto;
   }
 }
