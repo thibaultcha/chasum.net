@@ -2,7 +2,7 @@ projects:
   -
     name: TCBlobDownload
     link: https://github.com/thibaultCha/TCBlobDownload
-    description: Concurrent large file download library for iOS.
+    description: Concurrent large downloads for iOS made easy.
   -
     name: TCBlobDownloadSwift
     link: https://github.com/thibaultCha/TCBlobDownloadSwift
@@ -18,7 +18,7 @@ projects:
   -
     name: lua-argon2
     link: https://github.com/thibaultCha/lua-argon2
-    description: "Pure Lua binding for the Argon2 password hashing algorithm."
+    description: "Lua C binding for the Argon2 password hashing algorithm."
   -
     name: lua-argon2-ffi
     link: https://github.com/thibaultCha/lua-argon2-ffi
