@@ -59,7 +59,7 @@ projects:
 contributions:
   -
     name: Kong
-    link: https://getkong.org/
+    link: https://github.com/Mashape/kong
     description: "Microservice & API Management Layer built on top of NGINX."
   -
     name: OpenResty
