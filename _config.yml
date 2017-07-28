@@ -8,5 +8,4 @@ url: "http://1991.io"
 # Build settings
 source: ./site
 destination: ./dist
-markdown: redcarpet
 permalink: pretty
