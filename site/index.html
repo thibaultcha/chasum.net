@@ -9,30 +9,45 @@ no_header: true
       <img src="/assets/images/thibault.jpg" alt="thibaultcha" />
       <h1>{{site.title}}</h1>
       <p>Hello, I am Thibault, a <span id="age">25</span> year old developer.</p>
-      <p>Currently building the API Economy at <a href="https://www.mashape.com">Mashape</a>.</p>
+      <p>Lead Engineer @ <a href="https://getkong.org">Kong</a></p>
     </article>
   </div>
 </div>
 
 <div class="row">
   <section class="twelve columns">
-    <h4>Open Source</h4>
-    <article class="open-source">
-      <h5>Projects</h5>
+
+    <article class="category">
+      <h2>Projects</h2>
       <ul>
         {% for project in site.data.open_source.projects %}
           <li>{% if project.link %}<a href="{{ project.link }}">{{ project.name }}</a>{% else %}{{ project.name }}{% endif %}{% if project.description %}<span class="description">: {{ project.description }}</span>{% endif %}</li>
         {% endfor %}
       </ul>
     </article>
-    <article class="open-source">
-      <h5>Contributions</h5>
-      <p>As an avid open-source lover, I try to contribute as much as I can to projects and ecosystems I love. Most frequently:</p>
+
+    <article class="category">
+      <h2>Contributions</h2>
       <ul>
         {% for project in site.data.open_source.contributions %}
           <li>{% if project.link %}<a href="{{ project.link }}">{{ project.name }}</a>{% else %}{{ project.name }}{% endif %}{% if project.description %}<span class="description">: {{ project.description }}</span>{% endif %}</li>
         {% endfor %}
       </ul>
     </article>
+
+    <article class="category">
+      <h2>Talks</h2>
+      {% for talk in site.data.open_source.talks %}
+        <article class="talk">
+          <h3 class="talk-title">{{ talk.title }}</h3>
+          <p class="talk-event">
+            <a href="{{ talk.event.link }}">{{ talk.event.title }}</a>
+            - {{ talk.event.location }}
+          </p>
+          <blockquote>{{ talk.description }}</blockquote>
+        </article>
+      {% endfor %}
+    </article>
+
   </section>
 </div>

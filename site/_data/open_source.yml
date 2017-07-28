@@ -77,3 +77,21 @@ contributions:
     name: lua-resty-cassandra
     link: https://github.com/jbochi/lua-resty-cassandra
     description: Pure Lua Cassandra client using CQL binary protocol.
+
+talks:
+    -
+        title: A Cassandra driver from and for the Lua community
+        event:
+          title: LuaConf 2017
+          link: https://luaconf.com
+          location: Rio de Janeiro, Brazil - July 3rd, 2017
+        slides: https://www.slideshare.net/ThibaultCharbonnier/a-cassandra-driver-from-and-for-the-lua-community
+        description: "A critical component of the Kong API Gateway, the lua-cassandra library originated from the Lua community, and is now being actively maintained by Mashape. We will study its story, its new features such as clustering support, good practices for LuaJIT/OpenResty development, and propose some solutions to the difficulties of maintaining Lua code for PUC-Lua, LuaJIT, and OpenResty."
+    -
+        title: Manage your APIs and Microservices with an API Gateway
+        event:
+          title: OpenAPI Meetup
+          link: https://www.meetup.com/Swagger-API/events/238276152/
+          location: San Francisco, USA - March 30th, 2017
+        slides: https://www.slideshare.net/ThibaultCharbonnier/manage-your-apis-and-microservices-with-an-api-gateway
+        description: "An introduction to microservices, API Gateways, and Kong."
