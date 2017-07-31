@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: http://1991.io/sitemap.xml
+Sitemap: https://chasum.net/sitemap.xml
