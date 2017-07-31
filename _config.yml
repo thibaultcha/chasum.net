@@ -1,8 +1,8 @@
 # Site settings
 title: thibaultcha
 description: >
-  Thibault Charbonnier, developer. Open-source, iOS, web, APIs.
-url: "http://1991.io"
+  Thibault Charbonnier, Kong & OpenResty contributor.
+url: "https://chasum.net"
 
 # Build settings
 source: ./site
