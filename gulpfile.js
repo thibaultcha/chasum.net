@@ -28,7 +28,7 @@ gulp.task('styles', () => {
     .pipe($.plumber())
     // .pipe($.sourcemaps.init())
     .pipe($.less())
-    .pipe($.uncss({ html: glob.sync('dist/**/*.html') }))
+    //.pipe($.uncss({ html: glob.sync('dist/**/*.html') }))
     .pipe($.autoprefixer())
     .pipe($.minifyCss())
     // .pipe($.sourcemaps.write('dist/assets/maps'))
