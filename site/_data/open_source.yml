@@ -76,6 +76,15 @@ projects:
 
 talks:
     -
+        title: Developing a user-friendly OpenResty application 
+        event:
+          title: OpenResty Con 2017
+          link: https://con.openresty.com
+          location: Beijing, China - October 21st, 2017
+        slides: https://www.slideshare.net/ThibaultCharbonnier/developing-a-userfriendly-openresty-application
+        description: "Kong is a widely-adopted open source API Gateway built with OpenResty. It aims at helping secure, manage, and extend microservices-based architectures with minimal effort from the user, while ensuring platform agnosticism.
+In this talk, we will explore the challenges we encountered developing such an OpenResty application, and how we overcame many of them by way of libraries and contributions back to the OpenResty community. We will cover topics such as clustering OpenResty nodes, inter-workers communication, DNS resolution, typical pitfalls OpenResty developers should avoid, and much more. "
+    -
         title: A Cassandra driver from and for the Lua community
         event:
           title: LuaConf 2017
