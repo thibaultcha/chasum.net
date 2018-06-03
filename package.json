@@ -10,7 +10,8 @@
   "scripts": {
     "postinstall": "bundle install",
     "start": "gulp",
-    "test": "standard"
+    "test": "standard",
+    "deploy": "gulp deploy"
   },
   "devDependencies": {
     "browser-sync": "^2.11.1",
