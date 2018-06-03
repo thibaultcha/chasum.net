@@ -1,15 +1,15 @@
 ---
 layout: default
-no_header: true
+header: false
 ---
 
 <div class="row">
   <div class="twelve columns">
     <article class="me">
-      <img src="/assets/images/thibault.jpg" alt="thibaultcha" />
-      <h1>{{site.title}}</h1>
-      <p>NGINX/LuaJIT. iOS/Node.js/Frontend in a previous life.</p>
-      <p>Lead Engineer @ <a href="https://getkong.org">Kong</a></p>
+      <img src="https://gravatar.com/avatar/3225f0e3fdc6fc9a8d05f47710b1dade?s=600" alt="thibaultcha" />
+      <h1>{{ site.name }}</h1>
+      <p>{{ site.description | markdownify }}</p>
+      <p>{{ site.job_title | markdownify }}</p>
     </article>
   </div>
 </div>
@@ -25,7 +25,7 @@ no_header: true
         {% endfor %}
       </ul>
     </article>
-
+title
     <article class="category">
       <h2><a name="projects" href="#projects">Libraries &amp; Projects</a></h2>
       <ul>

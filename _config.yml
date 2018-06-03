@@ -1,8 +1,12 @@
 # Site settings
 title: thibaultcha
-description: >
-  Thibault Charbonnier, Kong & OpenResty contributor.
 url: "https://chasum.net"
+# Homepage settings
+name: Thibault Charbonnier
+description: >
+    All things Linux/NGINX/LuaJIT. iOS/Node.js/Frontend in a previous life.
+job_title: >
+    Principal Engineer @ [Kong](https://konghq.com)
 
 # Build settings
 source: ./site
