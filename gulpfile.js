@@ -38,6 +38,7 @@ gulp.task('styles', () => {
     .pipe(browserSync.stream())
 })
 
+/*
 gulp.task('javascripts', () => {
   return gulp.src(sources.js)
     .pipe($.plumber())
@@ -49,20 +50,23 @@ gulp.task('javascripts', () => {
     .pipe($.size())
     .pipe(browserSync.stream())
 })
+*/
 
+/*
 gulp.task('imagemin', () => {
   return gulp.src(sources.images)
     .pipe($.imagemin({ progressive: true }))
     .pipe(gulp.dest('site/_assets/images'))
 })
 
-gulp.task('images', () => {
+ gulp.task('images', () => {
   return gulp.src(sources.images)
     .pipe($.plumber())
     .pipe(gulp.dest('dist/assets/images'))
     .pipe($.size())
     .pipe(browserSync.stream())
 })
+*/
 
 gulp.task('fonts', () => {
   return gulp.src(sources.fonts)
@@ -72,6 +76,7 @@ gulp.task('fonts', () => {
     .pipe(browserSync.stream())
 })
 
+/*
 gulp.task('files', () => {
   return gulp.src(sources.files)
     .pipe($.plumber())
@@ -79,6 +84,7 @@ gulp.task('files', () => {
     .pipe($.size())
     .pipe(browserSync.stream())
 })
+*/
 
 gulp.task('jekyll', (cb) => {
   const cmd = `bundle exec jekyll build --config ${jekyll_config}`
@@ -121,7 +127,8 @@ gulp.task('rev', () => {
 })
 
 gulp.task('build', ['clean'], (cb) => {
-  sequence('html', 'styles', 'javascripts', 'images', 'fonts', 'files', 'rev', cb)
+  //sequence('html', 'styles', 'javascripts', 'images', 'fonts', 'files', 'rev', cb)
+  sequence('html', 'styles', 'fonts', 'rev', cb)
 })
 
 gulp.task('gh-pages', (cb) => {
@@ -157,9 +164,9 @@ gulp.task('browser-sync', function () {
 gulp.task('watch', () => {
   gulp.watch(sources.content, ['build'])
   gulp.watch(sources.styles, ['styles'])
-  gulp.watch(sources.images, ['images'])
+  //gulp.watch(sources.images, ['images'])
   gulp.watch(sources.fonts, ['fonts'])
-  gulp.watch(sources.js, ['javascripts'])
+  //gulp.watch(sources.js, ['javascripts'])
 })
 
 gulp.task('default', (cb) => {
