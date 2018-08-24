@@ -1,4 +1,16 @@
 -
+    title: "Layered Caching in OpenResty"
+    event:
+        title: Bay Area OpenResty Meetup
+        link: https://www.meetup.com/Bay-Area-OpenResty-Meetup/events/kwbgcqyxlbfc/
+        location: San Francisco, USA - August 23rd, 2018
+    slides: https://www.slideshare.net/ThibaultCharbonnier/layered-caching-in-openresty
+    description: >
+        In this talk, we will dive into the new "mlcache" library, which aims
+        at providing a simple abstraction for layered caching in OpenResty. We
+        will explore several practical use-cases for it that will help you
+        achieve high-performance goals for your applications.
+-
     title: "A Kong retrospective: from 0.10 to 0.13"
     event:
         title: Kong Meetup
