@@ -37,7 +37,7 @@ header: false
 
     <article class="category">
       <h2><a name="talks" href="#talks">Talks</a></h2>
-      {% for talk in site.data.open_source.talks %}
+      {% for talk in site.data.talks %}
         <article class="talk">
           <h3 class="talk-title"><a name="{{ talk.title }}" href="#{{ talk.title | slugify }}">{{ talk.title }}</a></h3>
           <p class="talk-event">
