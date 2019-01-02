@@ -46,6 +46,7 @@ header: false
           </p>
           <p>
             <a href="{{ talk.slides }}">Slides</a>
+            {% if talk.video %} - <a href="{{ talk.video }}">Video</a>{% endif %}
           </p>
           <blockquote>{{ talk.description }}</blockquote>
         </article>
