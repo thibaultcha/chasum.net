@@ -1,4 +1,14 @@
 -
+    title: "Layered Caching in OpenResty (40 min)"
+    event:
+        title: OpenResty Con 2018
+        link: http://con.openresty.org/cn/2018/
+        location: Hangzhou, China - November 18th, 2018
+    slides: https://www.slideshare.net/ThibaultCharbonnier/layered-caching-in-openresty-openresty-con-2018
+    video: https://www.youtube.com/watch?v=QF1Gtj3ahB0
+    description: >
+        A 40 minutes version of my previous talk on layered caching in OpenResty.
+-
     title: "Layered Caching in OpenResty"
     event:
         title: Bay Area OpenResty Meetup
