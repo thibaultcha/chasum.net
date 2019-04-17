@@ -2,10 +2,10 @@
   "private": true,
   "version": "1.0.0",
   "license": "proprietary",
-  "name": "kong-frontend",
+  "name": "chasum.net",
   "repository": {
     "type": "git",
-    "url": "git@github.com:mashape/kong-frontend"
+    "url": "git@github.com:thibaultcha/chasum.net"
   },
   "scripts": {
     "postinstall": "bundle install",
