@@ -1,4 +1,13 @@
 -
+    title: "Kong in 1.x Territory"
+    event:
+        title: Kong Tokyo Meetup
+        link: https://microservicesfrontlinewithceoo.splashthat.com/
+        location: AWS Loft Tokyo, Japan - April 16th, 2019
+    slides: https://www.slideshare.net/ThibaultCharbonnier/kong-in-1x-territory
+    description: >
+        A retrospective on the state of the development of the Kong API Gateway since its 1.0 release. New features, new deployment paradigms, and what to expect from upcoming releases.
+-
     title: "Layered Caching in OpenResty (40 min)"
     event:
         title: OpenResty Con 2018
