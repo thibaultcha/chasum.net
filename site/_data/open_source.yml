@@ -6,7 +6,7 @@ contributor:
   -
     name: OpenResty
     link: https://openresty.org
-    description: "Regular contributor. OpenResty is a dynamic web platform based on NGINX and LuaJIT."
+    description: "Maintainer. OpenResty is a dynamic web platform based on NGINX and LuaJIT."
 
 projects:
   -
