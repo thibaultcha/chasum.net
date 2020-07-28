@@ -150,6 +150,23 @@ gulp.task('serve', (cb) => {
   cb()
 })
 
+gulp.task('build', gulp.series('clean', 'html', 'styles', 'fonts', 'rev', (cb) => {
+  cb()
+}))
+
+gulp.task('serve', (cb) => {
+  browserSync.init({
+    logPrefix: ' ▶ ',
+    port: 9191,
+    minify: false,
+    notify: false,
+    server: 'dist',
+    open: false
+  })
+
+  cb()
+})
+
 gulp.task('watch', (cb) => {
   gulp.watch(sources.content, gulp.series('build'))
   gulp.watch(sources.styles, gulp.series('styles'))
