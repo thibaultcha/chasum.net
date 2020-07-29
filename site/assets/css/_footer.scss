@@ -24,7 +24,7 @@ footer {
         display: inline;
 
         & > i {
-          color: @main-color;
+          color: $main_color;
         }
       }
     }

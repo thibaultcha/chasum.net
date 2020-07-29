@@ -10,5 +10,9 @@ job_title: >
 
 # Build settings
 source: ./site
-destination: ./dist
+disable_disk_cache: true
 permalink: pretty
+sass:
+  sass_dir: assets/css
+  style: compressed
+

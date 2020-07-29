@@ -15,10 +15,12 @@ jobs:
       - uses: actions/checkout@v2
       - name: Build
         run: |
-          npm install
-          gulp build
+          bundle install
+          bundle exec jekyll build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
+          cname: chasum.net
+          publish_dir: ./_site
+          allow_empty_commit: true
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist

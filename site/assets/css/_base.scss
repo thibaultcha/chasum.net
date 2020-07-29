@@ -1,14 +1,14 @@
 //---------------
 // Variables
 
-@san_francisco: #C0362C;
-@main-color: @san_francisco;
+$san_francisco: #C0362C;
+$main_color: $san_francisco;
 
 //---------------
 // Base CSS
 
 body {
-  border-top: 3px solid @main-color;
+  border-top: 3px solid $main_color;
 }
 
 header {
@@ -16,13 +16,13 @@ header {
 }
 
 a {
-  color: @main-color;
+  color: $main_color;
   font-weight: bold;
   text-decoration: none;
   transition: 0.2s ease;
 
   &:hover {
-    color: lighten(@main-color, 20%);
+    color: lighten($main_color, 20%);
   }
 }
 
