@@ -2,18 +2,18 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>http://localhost:4000/</loc>
-    <lastmod>2020-07-29T12:20:27-07:00</lastmod>
+    <loc>https://chasum.net/</loc>
+    <lastmod>2020-07-29T12:46:02-07:00</lastmod>
   </url>
 
   <url>
-    <loc>http://localhost:4000/assets/css/index.css</loc>
-    <lastmod>2020-07-29T12:20:27-07:00</lastmod>
+    <loc>https://chasum.net/assets/css/index.css</loc>
+    <lastmod>2020-07-29T12:46:02-07:00</lastmod>
   </url>
 
   <url>
-    <loc>http://localhost:4000/assets/css/index.css.map</loc>
-    <lastmod>2020-07-29T12:20:27-07:00</lastmod>
+    <loc>https://chasum.net/assets/css/index.css.map</loc>
+    <lastmod>2020-07-29T12:46:02-07:00</lastmod>
   </url>
 
 </urlset>
