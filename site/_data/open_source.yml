@@ -1,75 +1,79 @@
 contributor:
   -
     name: Kong
-    link: https://github.com/Mashape/kong
-    description: "Co-author and main contributor. Kong is a Microservice & API Management Layer built on top of NGINX."
+    link: https://github.com/Kong/kong
+    description: "Co-author. Kong is a Microservice & API Management Layer built on top of NGINX."
   -
     name: OpenResty
     link: https://openresty.org
-    description: "Maintainer. OpenResty is a dynamic web platform based on NGINX and LuaJIT."
+    description: "OpenResty is a dynamic web platform based on NGINX and LuaJIT."
 
 projects:
   -
+    name: Setup OpenResty
+    link: https://github.com/thibaultcha/setup-openresty
+    description: "A GitHub Action installing OpenResty CI/CD tools."
+  -
     name: lua-cassandra
-    link: https://github.com/thibaultCha/lua-cassandra
+    link: https://github.com/thibaultcha/lua-cassandra
     description: "Pure Lua, feature-rich client for Apache Cassandra, fit for use in OpenResty."
   -
     name: lua-resty-mlcache
     link: https://github.com/thibaultcha/lua-resty-mlcache
     description: "Multi-level caching library for OpenResty."
   -
-    name: lua-resty-jit-uuid
-    link: https://github.com/thibaultCha/lua-resty-jit-uuid
-    description: "Fast and dependency-free uuid generation for LuaJIT."
-  -
-    name: lua-argon2
-    link: https://github.com/thibaultCha/lua-argon2
-    description: "Lua C binding for the Argon2 password hashing algorithm."
-  -
-    name: lua-argon2-ffi
-    link: https://github.com/thibaultCha/lua-argon2-ffi
-    description: "LuaJIT FFI binding for the Argon2 password hashing algorithm."
-  -
     name: lua-resty-multipart
     link: https://github.com/thibaultcha/lua-resty-multipart
     description: "Multipart parsing library for OpenResty."
   -
     name: lua-resty-socket
-    link: https://github.com/thibaultCha/lua-resty-socket
+    link: https://github.com/thibaultcha/lua-resty-socket
     description: "A small module to make ngx_lua's cosockets and LuaSocket interoperable."
   -
+    name: lua-resty-jit-uuid
+    link: https://github.com/thibaultcha/lua-resty-jit-uuid
+    description: "Fast and dependency-free uuid generation for LuaJIT."
+  -
+    name: lua-resty-websocket-proxy
+    link: https://github.com/Kong/lua-resty-websocket-proxy
+    description: "Reverse-proxying of websocket frames for OpenResty."
+  -
+    name: lua-argon2
+    link: https://github.com/thibaultcha/lua-argon2
+    description: "Lua C binding for the Argon2 password hashing algorithm."
+  -
+    name: lua-argon2-ffi
+    link: https://github.com/thibaultcha/lua-argon2-ffi
+    description: "LuaJIT FFI binding for the Argon2 password hashing algorithm."
+  -
     name: TCBlobDownload
-    link: https://github.com/thibaultCha/TCBlobDownload
+    link: https://github.com/thibaultcha/TCBlobDownload
     description: Concurrent large downloads for iOS made easy.
   -
     name: TCBlobDownloadSwift
-    link: https://github.com/thibaultCha/TCBlobDownloadSwift
+    link: https://github.com/thibaultcha/TCBlobDownloadSwift
     description: "A better TCBlobDownload for iOS 7+, in Swift."
   -
     name: TCCopyableLabel
-    link: https://github.com/thibaultCha/TCCopyableLabel
+    link: https://github.com/thibaultcha/TCCopyableLabel
     description: A copyable UILabel subclass.
   -
     name: Equiprose
-    link: https://github.com/thibaultCha/Equiprose
+    link: https://github.com/thibaultcha/Equiprose
     description: A static website and blog generator in Node.js.
   -
-    name: Fortunecow
-    link: https://www.mashape.com/thibaultcha/fortunecow
-    description: A fun API combining cowsay and fortune cookies.
+    name: node-enumerate-properties
+    link: https://github.com/thibaultcha/node-enumerate-properties
+    description: JavaScript objects manipulation via dot notation format, with a terrible name.
+  -
+    name: responsive-grid-layout
+    link: https://github.com/thibaultcha/responsive-grid-layout
+    description: Responsive grid layout generator in Less.
+  -
+    name: TCQueuePlayer
+    link: https://github.com/thibaultcha/TCQueuePlayer
+    description: A wrapper class with controls for AVQueuePlayer.
   -
     name: lapis-syntax
     link: https://atom.io/themes/lapis-syntax
     description: "A profound, purple based, dark colored theme for Atom."
-  -
-    name: node-enumerate-properties
-    link: https://github.com/thibaultCha/node-enumerate-properties
-    description: JavaScript objects manipulation via dot notation format, with a terrible name.
-  -
-    name: responsive-grid-layout
-    link: https://github.com/thibaultCha/responsive-grid-layout
-    description: Responsive grid layout generator in Less.
-  -
-    name: TCQueuePlayer
-    link: https://github.com/thibaultCha/TCQueuePlayer
-    description: A wrapper class with controls for AVQueuePlayer.

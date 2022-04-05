@@ -18,7 +18,7 @@ header: false
   <section class="twelve columns">
 
     <article class="category">
-      <h2><a name="contributions" href="#contributions">Contributor</a></h2>
+      <h2><a name="contributions" href="#contributions">Main projects &amp; contributions</a></h2>
       <ul>
         {% for project in site.data.open_source.contributor %}
           <li>{% if project.link %}<a href="{{ project.link }}">{{ project.name }}</a>{% else %}{{ project.name }}{% endif %}{% if project.description %}<span class="description">: {{ project.description }}</span>{% endif %}</li>
@@ -27,7 +27,7 @@ header: false
     </article>
 
     <article class="category">
-      <h2><a name="projects" href="#projects">Libraries &amp; Projects</a></h2>
+      <h2><a name="projects" href="#projects">Libraries &amp; misc</a></h2>
       <ul>
         {% for project in site.data.open_source.projects %}
           <li>{% if project.link %}<a href="{{ project.link }}">{{ project.name }}</a>{% else %}{{ project.name }}{% endif %}{% if project.description %}<span class="description">: {{ project.description }}</span>{% endif %}</li>
