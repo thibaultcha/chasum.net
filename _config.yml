@@ -4,9 +4,9 @@ url: "https://chasum.net"
 # Homepage settings
 name: Thibault Charbonnier
 description: >
-    All things Linux/NGINX/LuaJIT. iOS/Node.js/Frontend in a previous life.
+    All things Linux/Embedding/Nginx/LuaJIT/WebAssembly.
 job_title: >
-    Principal Engineer @ [Kong Inc.](https://konghq.com)
+    @ [Kong Inc.](https://konghq.com)
 
 # Build settings
 source: ./site
@@ -15,4 +15,3 @@ permalink: pretty
 sass:
   sass_dir: assets/css
   style: compressed
-
