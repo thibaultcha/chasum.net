@@ -3,13 +3,13 @@
 	"file": "index.css",
 	"sources": [
 		"index.scss",
-		"site/assets/css/_vendor/normalize.css",
-		"site/assets/css/_vendor/skeleton.css",
-		"site/assets/css/_vendor/fontello.css",
-		"site/assets/css/_base.scss",
-		"site/assets/css/_homepage.scss",
-		"site/assets/css/_page_layout.scss",
-		"site/assets/css/_footer.scss"
+		"assets/css/_vendor/normalize.css",
+		"assets/css/_vendor/skeleton.css",
+		"assets/css/_vendor/fontello.css",
+		"assets/css/_base.scss",
+		"assets/css/_homepage.scss",
+		"assets/css/_page_layout.scss",
+		"assets/css/_footer.scss"
 	],
 	"sourcesContent": [
 		"@import \"./_vendor/normalize\";\n@import \"./_vendor/skeleton\";\n@import \"./_vendor/fontello\";\n\n// thibaultcha\n@import \"_base.scss\";\n@import \"_homepage.scss\";\n@import \"_page_layout.scss\";\n@import \"_footer.scss\";\n",
